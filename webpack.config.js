@@ -1,5 +1,6 @@
 const Path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const yaml = require('yamljs');
 
 module.exports = {
     entry: {
@@ -16,17 +17,24 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css/,
+                test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.ts$/,
+                test: /\.ts$/i,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {
-                test: /\.jpg/,
+                test: /\.(png|jpg)$/i,
                 type: "asset/resource",
+            },
+            {
+                test: /\.yaml$/i,
+                type: 'json',
+                parser: {
+                    parse: yaml.parse,
+                },
             },
         ],
     },

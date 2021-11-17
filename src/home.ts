@@ -3,6 +3,9 @@ const foodImageUrl = require("./images/food.jpg");
 function createHomePage() {
   const contentSection = document.querySelector("#content");
 
+  const flexContainer = document.createElement("section");
+  flexContainer.id = "center-flex-container";
+
   const restaurantCard = document.createElement("section");
   restaurantCard.id = "restaurant-card";
 
@@ -36,7 +39,8 @@ function createHomePage() {
 
   restaurantInfoSection.append(foodImageSection, descriptionSection);
   restaurantCard.append(restaurantHeader, restaurantInfoSection);
-  contentSection.appendChild(restaurantCard);
+  flexContainer.appendChild(restaurantCard);
+  contentSection.appendChild(flexContainer);
 }
 
 export { createHomePage };

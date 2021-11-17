@@ -1,0 +1,32 @@
+---
+- Pizzas:
+    - Margherita:
+        price: 100
+    - Framhouse:
+        price: 215
+    - Veg Extravaganza:
+        price: 235
+
+- Burgers:
+    - Veg Whopper:
+        price: 150
+    - Veg Peri Peri:
+        price: 200
+    - Boss Whopper:
+        price: 200
+
+- Beverages:
+    - Coffee:
+        price: 100
+    - Tea:
+        price: 50
+    - Chocolate Shake:
+        price: 150
+    - Mango Shake:
+        price: 130
+
+- Sides:
+    - French Fries:
+        price: 100
+    - Tomato Soup:
+        price: 150

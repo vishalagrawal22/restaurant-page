@@ -61,5 +61,5 @@ import { createContactPage } from "./contact";
     });
   }
 
-  create("home");
+  create("menu");
 })();
