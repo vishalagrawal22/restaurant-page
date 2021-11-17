@@ -1,8 +1,8 @@
-const foodImageUrl = require("./images/food.jpg");
+const foodImageUrl = require("./food.jpg");
+const data = require("./data.yaml");
+import "./style.css";
 
-function createHomePage() {
-  const contentSection = document.querySelector("#content");
-
+function getHomePage() {
   const flexContainer = document.createElement("section");
   flexContainer.id = "center-flex-container";
 
@@ -12,7 +12,7 @@ function createHomePage() {
   const restaurantHeader = document.createElement("section");
   restaurantHeader.id = "restaurant-header";
   const headline = document.createElement("section");
-  headline.innerText = "We specialize in serving delicious fast food";
+  headline.innerText = data["short-description"];
   restaurantHeader.appendChild(headline);
 
   const restaurantInfoSection = document.createElement("section");
@@ -26,21 +26,12 @@ function createHomePage() {
 
   const descriptionSection = document.createElement("section");
   descriptionSection.id = "description";
-  descriptionSection.innerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget\
-    magna blandit, semper lorem id, luctus elit. Suspendisse facilisis\
-    placerat ante, nec pulvinar tellus maximus ut. Aliquam pharetra leo\
-    at ultrices molestie. Donec vel ligula neque. Vestibulum tincidunt\
-    ac metus quis sollicitudin. Etiam efficitur sed metus ac ornare.\
-    Etiam pharetra malesuada sapien, sed tristique urna tempus vitae.\
-    Duis ex risus, aliquet tempor tellus non, eleifend gravida est.\
-    Fusce scelerisque, velit eget facilisis vehicula, velit dui laoreet\
-    eros, in malesuada urna libero sit amet arcu. Nulla auctor egestas\
-    facilisis. Pellentesque congue ligula sed consequat pellentesque.`;
+  descriptionSection.innerText = data["long-description"];
 
   restaurantInfoSection.append(foodImageSection, descriptionSection);
   restaurantCard.append(restaurantHeader, restaurantInfoSection);
   flexContainer.appendChild(restaurantCard);
-  contentSection.appendChild(flexContainer);
+  return flexContainer;
 }
 
-export { createHomePage };
+export { getHomePage };

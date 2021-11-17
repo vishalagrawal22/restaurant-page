@@ -3,15 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const yaml = require('yamljs');
 
 module.exports = {
-    entry: {
-        index: "./src/index.ts",
-        home: "./src/home.ts",
-        contact: "./src/contact.ts",
-        menu: "./src/menu.ts",
-    },
+    entry: "./src/index.ts",
     output: {
         path: Path.resolve(__dirname, "dist"),
-        filename: "[name].bundle.js",
+        filename: "bundle.js",
         clean: true,
     },
     module: {

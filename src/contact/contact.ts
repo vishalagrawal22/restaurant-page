@@ -1,8 +1,8 @@
-const chefIconUrl = require("./images/chef.png");
+const chefIconUrl = require("./chef.png");
+const data = require("./data.yaml");
+import "./style.css";
 
-function createContactPage() {
-  const contentSection = document.querySelector("#content");
-  console.log(contentSection);
+function getContactPage() {
   const centerFlexContainer = document.createElement("section");
   centerFlexContainer.id = "center-flex-container";
   const contactFlexContainer = document.createElement("section");
@@ -22,9 +22,7 @@ function createContactPage() {
   addressHeading.innerText = "Address: ";
   const addressValue = document.createElement("section");
   addressValue.classList.add("data-value");
-  addressValue.innerText = `Lorem ipsum dolor sit amet, 
-                              consectetur elit,
-                              bibendum. `;
+  addressValue.innerText = data["address"];
   addressSection.append(addressHeading, addressValue);
 
   const contactNumberSection = document.createElement("section");
@@ -34,12 +32,16 @@ function createContactPage() {
   contactNumberHeading.innerText = "Contact Number: ";
   const contactNumberValue = document.createElement("section");
   contactNumberValue.classList.add("data-value");
-  contactNumberValue.innerText = "+1-202-555-0158";
+  contactNumberValue.innerText = data["contact-number"];
   contactNumberSection.append(contactNumberHeading, contactNumberValue);
 
-  contactFlexContainer.append(imageSection, addressSection, contactNumberSection);
+  contactFlexContainer.append(
+    imageSection,
+    addressSection,
+    contactNumberSection
+  );
   centerFlexContainer.appendChild(contactFlexContainer);
-  contentSection.appendChild(centerFlexContainer);
+  return centerFlexContainer;
 }
 
-export { createContactPage };
+export { getContactPage };

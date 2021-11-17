@@ -1,22 +1,23 @@
-import "./style.css";
-import { createHomePage } from "./home";
-import { createMenuPage } from "./menu";
-import { createContactPage } from "./contact";
+import "./base.css";
+const data = require("./base.yaml");
+import { getHomePage } from "./home/home";
+import { getMenuPage } from "./menu/menu";
+import { getContactPage } from "./contact/contact";
 
 (function () {
   interface page {
     [key: string]: Function;
   }
-  const createMap: page = {
-    home: createHomePage,
-    menu: createMenuPage,
-    contact: createContactPage,
+  const getMap: page = {
+    home: getHomePage,
+    menu: getMenuPage,
+    contact: getContactPage,
   };
-  const create = (pageName: string) => createMap[pageName]();
+  const get = (pageName: string) => getMap[pageName]();
 
   const headerSection = document.createElement("header");
   const restaurantTitleSection = document.createElement("section");
-  restaurantTitleSection.innerText = "Hunger Junction";
+  restaurantTitleSection.innerText = data["restaurant-name"];
 
   const navBar = document.createElement("nav");
 
@@ -53,13 +54,18 @@ import { createContactPage } from "./contact";
     contentSection.innerHTML = "";
   }
 
+  function displayPage(page: string) {
+    const content = get(page);
+    contentSection.appendChild(content);
+  }
+
   for (let buttonNo = 0; buttonNo < buttonList.length; buttonNo++) {
     const button = buttonList[buttonNo];
     button.addEventListener("click", () => {
       clearScreen();
-      create(button.getAttribute("data-page"));
+      displayPage(button.getAttribute("data-page"));
     });
   }
 
-  create("home");
+  displayPage("home");
 })();

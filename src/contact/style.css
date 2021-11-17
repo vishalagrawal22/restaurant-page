@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Raleway");
+
+#center-flex-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chef-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#chef-image {
+  width: 20vw;
+  height: auto;
+}
+
+#contact-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: auto;
+  height: 60vh;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.data-heading {
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  margin-right: 2vw;
+}
+
+.data-value {
+  font-size: 1.5rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+@media only screen and (max-width: 850px) {
+  #chef-image {
+    width: 30vw;
+    height: auto;
+  }
+
+  .data-heading {
+    font-size: 1.3rem;
+  }
+
+  .data-value {
+    font-size: 1.3rem;
+  }
+}

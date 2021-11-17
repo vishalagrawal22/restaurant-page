@@ -1,7 +1,7 @@
 const menu = require("./menu.yaml");
+import "./style.css";
 
-function createMenuPage() {
-  const contentSection = document.querySelector("#content");
+function getMenuPage() {
   const centerFlexContainer = document.createElement("section");
   centerFlexContainer.id = "center-flex-container";
   const menuFlexContainer = document.createElement("section");
@@ -41,7 +41,7 @@ function createMenuPage() {
 
   menuFlexContainer.appendChild(categoryListSection);
   centerFlexContainer.appendChild(menuFlexContainer);
-  contentSection.appendChild(centerFlexContainer);
+  return centerFlexContainer;
 }
 
-export { createMenuPage };
+export { getMenuPage };
