@@ -1,7 +1,6 @@
-import "./styles/home.css";
 const foodImageUrl = require("./images/food.jpg");
 
-function createHome() {
+function createHomePage() {
   const contentSection = document.querySelector("#content");
 
   const restaurantCard = document.createElement("section");
@@ -40,4 +39,4 @@ function createHome() {
   contentSection.appendChild(restaurantCard);
 }
 
-export { createHome };
+export { createHomePage };

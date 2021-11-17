@@ -5,6 +5,8 @@ module.exports = {
     entry: {
         index: "./src/index.ts",
         home: "./src/home.ts",
+        contact: "./src/contact.ts",
+        menu: "./src/menu.ts",
     },
     output: {
         path: Path.resolve(__dirname, "dist"),
