@@ -1,4 +1,4 @@
-var menu = require("./menu.yaml");
+const menu = require("./menu.yaml");
 
 function createMenuPage() {
   const contentSection = document.querySelector("#content");
