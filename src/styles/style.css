@@ -1,0 +1,94 @@
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: wheat;
+}
+
+header {
+  height: 10%;
+  margin-bottom: 5vh;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(83, 77, 77, 0.904);
+}
+
+header section {
+  margin: 0vh 3vw;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#description {
+  font-size: 1.5rem;
+  width: 60vw;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#restaurant-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#restaurant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#restaurant-header {
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 5vh;
+}
+
+#food-image {
+  width: 30vw;
+  height: auto;
+}
+
+@media only screen and (max-width: 850px) {
+  #restaurant-header {
+    font-size: 1.6rem;
+  }
+
+  #description {
+    font-size: 1rem;
+  }
+
+  header {
+    font-size: 1.3rem;
+  }
+}
