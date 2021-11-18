@@ -2,6 +2,19 @@ const chefIconUrl = require("./chef.png");
 const data = require("./data.yaml");
 import "./style.css";
 
+function getDataSection(heading: string, value: string) {
+  const dataSection = document.createElement("section");
+  dataSection.classList.add("data-container");
+  const dataHeading = document.createElement("section");
+  dataHeading.classList.add("data-heading");
+  dataHeading.innerText = heading;
+  const dataValue = document.createElement("section");
+  dataValue.classList.add("data-value");
+  dataValue.innerText = value;
+  dataSection.append(dataHeading, dataValue);
+  return dataSection;
+}
+
 function getContactPage() {
   const centerFlexContainer = document.createElement("section");
   centerFlexContainer.id = "center-flex-container";
@@ -15,26 +28,9 @@ function getContactPage() {
   imageTag.src = chefIconUrl;
   imageSection.appendChild(imageTag);
 
-  const addressSection = document.createElement("section");
-  addressSection.classList.add("data-container");
-  const addressHeading = document.createElement("section");
-  addressHeading.classList.add("data-heading");
-  addressHeading.innerText = "Address: ";
-  const addressValue = document.createElement("section");
-  addressValue.classList.add("data-value");
-  addressValue.innerText = data["address"];
-  addressSection.append(addressHeading, addressValue);
-
-  const contactNumberSection = document.createElement("section");
-  contactNumberSection.classList.add("data-container");
-  const contactNumberHeading = document.createElement("section");
-  contactNumberHeading.classList.add("data-heading");
-  contactNumberHeading.innerText = "Contact Number: ";
-  const contactNumberValue = document.createElement("section");
-  contactNumberValue.classList.add("data-value");
-  contactNumberValue.innerText = data["contact-number"];
-  contactNumberSection.append(contactNumberHeading, contactNumberValue);
-
+  const addressSection = getDataSection("Address: ", data["address"]);
+  const contactNumberSection = getDataSection("Contact Number: ", data["contact-number"]);
+  
   contactFlexContainer.append(
     imageSection,
     addressSection,
